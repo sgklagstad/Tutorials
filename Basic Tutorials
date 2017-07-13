@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tutorials
+{
+    class numFuncs
+    {
+        public void swapInts(ref int num1, ref int num2)
+        {
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        public bool sameSign(int num1, int num2)
+        {
+            if ((num1 <= 0 && num2 <= 0) || (num1 > 0 && num2 > 0))
+            {
+                Console.WriteLine("Signs are the same");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Signs are not the same");
+                return false;
+            }
+        }
+    }
+    class executeTutorials
+    {
+        static void Main(string[] args)
+        {
+            int a = -1;
+            int b = 2;
+            numFuncs n = new numFuncs();
+            n.swapInts(ref a,ref b);
+            Console.WriteLine("After swapping:\na is {0}\nb is {1}", a, b);
+            n.sameSign(a, b);
+            Console.ReadLine();
+        }
+    }
+}
